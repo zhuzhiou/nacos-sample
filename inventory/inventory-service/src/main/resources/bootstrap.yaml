@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: inventory-service
+  profiles:
+    active: development
+  cloud:
+    nacos:
+      config:
+        server-addr: '192.168.1.32:8848,192.168.1.32:8848,192.168.1.32:8848'
+        namespace: ${spring.profiles.active}
+        name: ${spring.application.name}
+        file-extension: yaml
+      discovery:
+        server-addr: '192.168.1.32:8848,192.168.1.32:8848,192.168.1.32:8848'
+        namespace: ${spring.profiles.active}
